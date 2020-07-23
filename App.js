@@ -10,7 +10,7 @@ import Field from './src/components/Field'
 export default class App extends Component {
   render() {
     return (
-      <View>
+      <View style={styles.container}>
         <Text>Iniciando o Mines!</Text>
         <Text>Tamanho da grade:
           {params.getRowsAmount()} linhas e
@@ -23,11 +23,18 @@ export default class App extends Component {
         <Field opened nearMines={3} />
         <Field opened nearMines={6} />
         <Field opened nearMines={7} />
+        <Field mined />
+        <Field mined opened />
+        <Field mined opened exploded />
       </View>
     );
   }
 };
 
 const styles = StyleSheet.create({
-  
+  container: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+  }
 });
